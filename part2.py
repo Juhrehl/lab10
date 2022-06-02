@@ -10,7 +10,7 @@ fpin = int(f.read())
 
 #menu
 if upin == fpin:
-  print("Pin is valid")
+  print("Welcome back!")
   f = open ("balance.txt", "r")
   balance = int(f.read())
   f.close()
@@ -22,14 +22,14 @@ else:
 
 #withdraw
 if n == 1:
-  print ("Enter the amount to withdraw ")
+  print ("Enter the amount to withdraw: ")
   amount = int(input())
   balance = balance - amount
   message = "\nwithdrawed $"  + str(amount)
   
 #deposit
 elif n == 2:
-  print ("Enter the amount to deposit")
+  print ("Enter the amount to deposit: ")
   amount = int(input())
   balance = balance + amount
   message = "\ndeposited $" + str(amount)
@@ -39,11 +39,10 @@ f.write(str(balance))
 f.close()
 
 #logfile
-message = message + "at" + str(datetime.datetime.now())
+message = message + " at " + str(datetime.datetime.now())
 f = open("logfile.txt", "a")
 f.write(message)
 f.close()
-
 
 #change pin on pin.txt
 #view logfile on logfile.txt
